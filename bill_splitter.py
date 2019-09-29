@@ -1,12 +1,16 @@
 #%% GETS INPUTS
 def get_num_ppl(): # Number of People Splitting the Bill
+    ERROR_MSG = 'Invalid input - please try again'
     while True:
         try:
             num_ppl = int(input('Please enter the number of people splitting the bill: '))
         except ValueError:
-            print('Invalid input - please try again')
+            print(ERROR_MSG)
             continue
         else:
+            if num_ppl == 0:
+                print(ERROR_MSG)
+                continue
             return num_ppl
 
 def get_total_cost(): # Total Cost
